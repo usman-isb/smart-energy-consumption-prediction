@@ -1,0 +1,20 @@
+Figure,Path,Description
+PJM Time Series,notebooks/figures/pjm_timeseries.png,Full 16-year hourly electricity demand for PJM East showing overall trend and seasonal cycles from 2002 to 2018
+PJM Seasonal Decomposition,notebooks/figures/pjm_decomposition.png,Breaks PJM demand into three components — long-term trend (rising demand) + weekly seasonality + random residual noise
+PJM ACF / PACF,notebooks/figures/pjm_acf.png,Autocorrelation analysis confirming strong dependencies at lag 1 hour lag 24 hours and lag 168 hours (one week) justifying the 24-hour window choice
+PJM Consumption Patterns,notebooks/figures/pjm_patterns.png,Average electricity demand grouped by hour of day day of week and month showing when demand peaks and drops
+PJM Heatmap,notebooks/figures/pjm_heatmap.png,Grid showing average demand by hour vs day of week — darkest cells reveal the highest-demand time slots across the week
+PJM Rolling Statistics,notebooks/figures/pjm_rolling.png,7-day rolling mean and standard deviation over time showing how demand variability changes across seasons and years
+PJM Actual vs Predicted,notebooks/figures/pjm_actual_vs_pred.png,Overlay of actual electricity demand and predictions from all 5 models on the test set showing how closely each model tracks real values
+PJM Model Comparison,notebooks/figures/pjm_comparison.png,Bar chart comparing RMSE MAE MAPE and R² across all 5 models — Random Forest is the clear winner on every metric
+PJM Radar Chart,notebooks/figures/pjm_radar.png,Radar (spider) chart normalising all 4 metrics onto one plot — larger area means better overall performance across all metrics
+Deep Learning Training Curves,notebooks/figures/dl_training_curves.png,Training loss vs validation loss per epoch for LSTM GRU and CNN-LSTM showing how each model converged during training
+UCI Time Series,notebooks/figures/uci_timeseries.png,Full 4-year hourly household power consumption for the UCI dataset showing the erratic and unpredictable nature of residential usage
+UCI Seasonal Decomposition,notebooks/figures/uci_decomposition.png,Breaks UCI household consumption into trend seasonality and residual — residual is much larger than for PJM showing higher randomness
+UCI ACF / PACF,notebooks/figures/uci_acf.png,Autocorrelation analysis for UCI household data confirming similar lag patterns to PJM but with weaker correlations due to individual behaviour
+UCI Consumption Patterns,notebooks/figures/uci_patterns.png,Average household power usage grouped by hour of day day of week and month showing morning and evening peaks from appliance use
+UCI Heatmap,notebooks/figures/uci_heatmap.png,Grid of average household power consumption by hour vs day of week showing evening peaks when residents return home
+UCI Correlation Matrix,notebooks/figures/uci_correlation.png,Heatmap showing how strongly each of the 7 sub-metering channels correlates with each other — darker = stronger relationship
+UCI Actual vs Predicted,notebooks/figures/uci_actual_vs_pred.png,Overlay of actual household consumption and model predictions — wider gaps compared to PJM reflect the difficulty of forecasting household data
+UCI Model Comparison,notebooks/figures/uci_comparison.png,Bar chart comparing all 5 models on UCI dataset — XGBoost edges Random Forest while all deep learning models perform significantly worse
+UCI Radar Chart,notebooks/figures/uci_radar.png,Radar chart for UCI dataset showing Random Forest and XGBoost dominating deep learning models across all metrics

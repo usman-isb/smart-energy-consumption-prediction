@@ -1,0 +1,29 @@
+# Claude
+.claude/
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Large model files
+models/*.pkl
+models/*.keras
+models/*.json
+!models/all_predictions.pkl
+
+# macOS
+.DS_Store
+
+# Large UCI files (127 MB each — exceeds GitHub 100 MB limit)
+# Download using: python download_data.py
+data/raw/household_power_consumption.csv
+data/raw/household_power_consumption.txt
+
+# Generated processed data (recreated by running 02_preprocessing.ipynb)
+data/processed/
