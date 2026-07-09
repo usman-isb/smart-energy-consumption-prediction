@@ -281,9 +281,9 @@ In the Jupyter browser, click on the `notebooks` folder. Run the notebooks **in 
 
 ---
 
-## STEP 11 — Run the Dashboard (Optional)
+## STEP 11 — Run the Research Dashboard (Optional)
 
-The interactive dashboard lets you explore all results visually in your browser.
+The research dashboard lets you explore all results visually in your browser.
 
 1. Open a **new** Command Prompt window (`Win + R` → `cmd`)
 2. Navigate to the project folder:
@@ -305,6 +305,104 @@ streamlit run app.py
 6. Open your browser and go to: **http://localhost:8501**
 
 **To stop the dashboard:** Press `Ctrl + C` in the Command Prompt window.
+
+---
+
+## STEP 12 — Generate the Prediction Model
+
+This step trains the best model (Random Forest) on its own and saves it as a single file.
+This is required before you can run the prediction web application in Step 13.
+
+**Note:** If you already ran Notebook 3 of 4 (`04_models.ipynb`) in Step 10, the model file
+`models/rf_pjm.pkl` already exists and you can skip this step and go straight to Step 13.
+
+**How to check:** Open the `models/` folder inside the project. If you see `rf_pjm.pkl`, skip to Step 13.
+
+**If the model file is missing, run Notebook 06:**
+
+1. In the Jupyter browser, click on the `notebooks` folder
+2. Click on `06_best_model.ipynb`
+3. If asked to select a kernel, choose **"Python 3 (thesis-venv)"**
+4. Click **Kernel → Restart & Run All**
+5. Click **Restart and Run All Cells** when the confirmation box appears
+6. Wait for all cells to finish
+
+**What this notebook does:**
+- Loads the raw PJM East dataset
+- Cleans and normalises the data
+- Creates 24-hour input sequences
+- Trains the Random Forest model
+- Saves three files needed by the web app:
+  - `models/rf_pjm.pkl` — the trained model
+  - `data/processed/pjm_scaler.pkl` — scaling settings
+  - `data/processed/pjm_processed.csv` — processed data for input lookup
+
+**Expected time:** 20–30 minutes
+
+**You will know it worked when** you see `rf_pjm.pkl` appear in the `models/` folder.
+
+---
+
+## STEP 13 — Run the Prediction Web Application
+
+The prediction web app lets you interactively predict electricity consumption.
+It has two modes:
+
+- **Historical Prediction** — pick any date from 2015–2018 and see the model predict that hour in real time
+- **Future Forecast** — pick a future year, month, and day type to see a full 24-hour demand forecast based on historical patterns
+
+**Requirement:** Complete Step 12 first (the model file must exist).
+
+**How to run:**
+
+1. Open a **new** Command Prompt window (`Win + R` → `cmd`)
+2. Navigate to the project folder:
+```
+cd "C:\Users\YourName\Desktop\implementation"
+```
+3. Activate the virtual environment:
+```
+venv\Scripts\activate
+```
+4. Navigate to the prediction app folder:
+```
+cd predict_app
+```
+5. Run the web app:
+```
+streamlit run app.py
+```
+6. Open your browser and go to: **http://localhost:8502**
+
+**To stop the app:** Press `Ctrl + C` in the Command Prompt window.
+
+---
+
+### How to Use the Prediction App
+
+**Tab 1 — Historical Prediction:**
+1. Select any date between 2015 and 2018 using the date picker
+2. Choose the hour of the day using the slider (0 = midnight, 12 = noon, 23 = 11 PM)
+3. Click **Predict**
+4. The app shows:
+   - **Predicted MW** — what the model forecasted
+   - **Actual MW** — what really happened
+   - **Error** — how far off the prediction was
+   - **A chart** — 24-hour input window with the prediction (orange star) vs actual (green dot)
+
+**Tab 2 — Future Forecast:**
+1. Select a future year (2019 or later)
+2. Select a month
+3. Select a day type (Monday to Sunday)
+4. Click **Generate Forecast**
+5. The app shows:
+   - A full **24-hour demand curve** for that type of day
+   - The **historical range** from 2002–2018 as a shaded band
+   - The model's **hour-by-hour prediction** as an orange line
+   - Peak demand hour, lowest demand hour, and daily average
+
+**Note:** The Future Forecast is based on historical patterns from 2002–2018.
+It shows what a typical day of that type would look like — it does not predict specific future events.
 
 ---
 
