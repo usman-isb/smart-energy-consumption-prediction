@@ -1,6 +1,6 @@
 """
 Electricity Consumption Predictor
-COM748 Masters Research — Ali Haider
+Smart Energy Consumption Forecasting
 
 Standalone web app. Run with:
     streamlit run app.py
@@ -60,7 +60,7 @@ if not os.path.exists(DATA_PATH):   missing.append('data/processed/pjm_processed
 
 # ── Header ─────────────────────────────────────────────────────────────────────
 st.title("⚡ Electricity Consumption Predictor")
-st.caption("COM748 Masters Research — Ali Haider | Model: Random Forest (R² = 0.9962)")
+st.caption("Smart Energy Consumption Forecasting | Model: Random Forest (R² = 0.9962)")
 st.markdown("---")
 
 with st.expander("ℹ️ What does this app do?", expanded=False):
@@ -495,5 +495,5 @@ st.caption(
     "Model: Random Forest (n_estimators=100, random_state=42)  |  "
     "Dataset: PJM East regional grid, USA  |  "
     "Training: 2002–2015  |  Test: 2015–2018  |  "
-    "Window: 24 hours  |  COM748 Masters Research · Ali Haider"
+    "Window: 24 hours"
 )

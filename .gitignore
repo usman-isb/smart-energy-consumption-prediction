@@ -27,3 +27,11 @@ data/raw/household_power_consumption.txt
 
 # Generated processed data (recreated by running 02_preprocessing.ipynb)
 data/processed/
+
+# Office documents (kept out of the repo)
+*.docx
+*.pptx
+
+# Supporting material assets (not part of the codebase)
+supporting_material/
+supporting_material.zip

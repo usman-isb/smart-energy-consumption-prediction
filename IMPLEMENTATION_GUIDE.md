@@ -1,6 +1,5 @@
 # Implementation Walkthrough
-## Smart Energy Consumption Forecasting — COM748 Masters Research
-### Ali Haider
+## Smart Energy Consumption Forecasting
 
 This document explains what is happening in every step of the implementation,
 what each file does, and what every result means — written in plain English.
@@ -829,4 +828,4 @@ After running all four notebooks, the results are saved in several files. This s
 
 ---
 
-*COM748 Masters Research · 2025–2026*
+*2025–2026*

@@ -117,7 +117,7 @@ if res_mv   is not None: ds_options.append("UCI Household (Multivariate)")
 # ── Sidebar ───────────────────────────────────────────────────────
 with st.sidebar:
     st.title("⚡ Smart Energy\nForecasting")
-    st.caption("COM748 Masters Research · Ali Haider")
+    st.caption("Smart Energy Consumption Forecasting")
     st.divider()
 
     page = st.radio("Navigate", [
@@ -160,7 +160,7 @@ with st.sidebar:
 # ═══════════════════════════════════════════════════════════════════
 if page == "🏠  Home":
     st.title("Smart Energy Consumption Forecasting")
-    st.subheader("Deep Learning & Time Series Analytics Framework · COM748 Masters Research")
+    st.subheader("Deep Learning & Time Series Analytics Framework")
     st.markdown("""
     This dashboard presents a comparative evaluation of **five forecasting models** —
     Random Forest, XGBoost, LSTM, GRU, and CNN-LSTM — applied to **three publicly available

@@ -1,5 +1,4 @@
 # Smart Energy Consumption Forecasting
-### COM748 Masters Research — Ali Haider
 
 ---
 
@@ -464,4 +463,4 @@ After running all four notebooks, these are the results:
 
 ---
 
-*COM748 Masters Research · 2025–2026*
+*2025–2026*
